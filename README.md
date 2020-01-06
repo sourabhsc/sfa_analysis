@@ -1,8 +1,8 @@
 ## sfa_analysis
 
 Diversity investment trends in business firms using SFA analysis
-
-* A project to identify diversity investement trends in business firms.
+=====================
+A project to identify diversity investement trends in business firms.
 We have three different diversities :- 
 * operational diversity
 * technical diversity
