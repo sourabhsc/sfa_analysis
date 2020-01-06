@@ -1,0 +1,28 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+
+```{r}
+
+library("readxl")
+my_data <- read_excel("/home/sourabh/proj_summer/data_set_17.xlsx")
+zNames = c('technicaldiversity', 'industrydiversity')
+library('frontier')
+front41WriteInput( my_data, 'globalcompanykey', timePeriodName = 'yr_counter2',
+   'growth', xNames = c('technicaldiversity', 'industrydiversity'), qxNames = 'all', zNames = c('technicaldiversity', 'industrydiversity'), quadHalf = TRUE,
+   modelType = ifelse( is.null( zNames ), 1, 2 ), functionType = 1,
+   logDepVar = TRUE, mu = FALSE, eta = FALSE,
+   insFile = "front41.ins", dtaFile = sub( "\\.ins$", ".dta", insFile ),
+   outFile = sub( "\\.ins$", ".out", insFile ), startUpFile = "front41.000",
+   iprint = 5, indic = 1, tol = 0.00001, tol2 = 0.001, bignum = 1.0E+16,
+   step1 = 0.00001, igrid2 = 1, gridno = 0.1, maxit = 100, ite = 1 )
+```
+```{r}
+
+```
